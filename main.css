@@ -1,0 +1,87 @@
+.container {
+    text-align: left;
+
+}
+
+.btn {
+    background-color: rgb(133, 218, 77);
+    color: rgb(34, 2, 85);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 14px;
+    margin: 10px 10px 10px 0px;
+    cursor: pointer;
+}
+
+#item-input {
+    padding: 10px 5px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.form-input-filter {
+    padding: 10px 5px;
+    margin-bottom: 5px;
+    border: none;
+    border-bottom: 1px solid #1890ff;
+    padding: 5px 10px;
+    outline: none;
+}
+
+.btn:hover {
+    background-color: rgb(12, 141, 0);
+}
+
+.remove-item:hover {
+    background-color: rgb(241, 154, 72);
+}
+
+.remove-item {
+    border: 1px solid rgb(231, 218, 95);
+    background-color: rgb(228, 245, 135);
+}
+
+.text-red {
+    color: red;
+}
+
+#clear {
+    background-color: rgb(245, 94, 84);
+    border-radius: 5px;
+}
+
+#clear:hover {
+    background-color: rgb(245, 19, 3);
+}
+
+.items {
+    margin-top: 10px 10px 10px 0px;
+    padding: 5px 8px;
+    width: 400px;
+}
+
+.items li {
+    display: flex;
+    justify-content: space-between;
+    color: rgb(2, 77, 107);
+    background-color: rgb(243, 233, 233);
+    padding: 5px 8px;
+    margin: 10px 5px 10px;
+    font-weight: 100;
+}
+
+.img-logo {
+    height: 40px;
+    width: 40px;
+    padding: 10px;
+    margin: 8px;
+}
+
+.header {
+    display: flex;
+    justify-content: stretch;
+    border-radius: 7px;
+    background-color: aqua;
+}
