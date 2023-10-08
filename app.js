@@ -18,7 +18,9 @@ formItem.addEventListener("submit", (e) => {
     return;
   }
   const li = createNewLi(formItemInput.value);
-  itemList.appendChild(li);
+  //inserted elemnt display at top
+  itemList.insertBefore(li, itemList.firstChild);
+  //itemList.appendChild(li);
   formItemInput.value = "";
   displaySearchBar();
 });
@@ -26,8 +28,11 @@ formItem.addEventListener("submit", (e) => {
 const createNewLi = (value) => {
   //create new Li element
   const li = document.createElement("li");
+  const val =
+    value.toUpperCase().charAt(0) + value.toLowerCase().slice(1) + " ";
+
   //append text inside Li
-  li.appendChild(document.createTextNode(value + " "));
+  li.appendChild(document.createTextNode(val));
 
   //create button element
   const button = document.createElement("button");
@@ -75,6 +80,21 @@ const clearItems = () => {
   displaySearchBar();
 };
 
+const searchItem = (e) => {
+  const searchedText = e.target.value.toLowerCase();
+  const items = itemList.querySelectorAll("li");
+
+  items.forEach((item) => {
+    const itemName = item.firstChild.textContent.toLocaleLowerCase();
+
+    if (itemName.indexOf(searchedText) != -1) {
+      item.style.display = "flex";
+    } else {
+      item.style.display = "none";
+    }
+  });
+};
+
 const displaySearchBar = () => {
   const allItems = itemList.querySelectorAll("li");
   if (allItems.length === 0) {
@@ -90,5 +110,6 @@ const displaySearchBar = () => {
 
 itemList.addEventListener("click", onRemoveItem);
 clearBtn.addEventListener("click", clearItems);
+filterItems.addEventListener("input", searchItem);
 
 displaySearchBar();
